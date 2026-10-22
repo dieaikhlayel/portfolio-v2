@@ -1,0 +1,285 @@
+@use 'sass:map';
+
+// Design tokens. Colors live in CSS custom properties so themes can switch at runtime.
+//
+// Theme rules:
+//   1. With no data-theme attribute on <html> the site follows the system:
+//      light ("Paper") by default, "Charcoal" when the OS prefers dark.
+//   2. data-theme="<name>" forces one of the named themes below.
+//   3. Every theme defines the same variables, so components never need to know which theme is active.
+//
+// Every text/background pair in every theme was checked against WCAG AA
+// (4.5:1 for text, 3:1 for focus rings and control borders).
+
+$themes: (
+  // Paper (light, teal)
+  'light': (
+      'scheme': light,
+      'bg': #f6f8f9,
+      'surface': #ffffff,
+      'raised': #eceff2,
+      'border': #d5dce1,
+      'border_strong': #6b7882,
+      'text': #121619,
+      'muted': #4a565f,
+      'accent': #0f766e,
+      'accent_hover': #115e59,
+      'on_accent': #ffffff,
+      'danger': #b91c1c,
+      'success': #166534,
+      'ring': #0f766e,
+    ),
+  // Charcoal (dark, teal)
+  'dark': (
+      'scheme': dark,
+      'bg': #0e1113,
+      'surface': #151a1d,
+      'raised': #1c2227,
+      'border': #2b333a,
+      'border_strong': #6b7882,
+      'text': #e9edf0,
+      'muted': #a1acb4,
+      'accent': #2dd4bf,
+      'accent_hover': #5eead4,
+      'on_accent': #04201c,
+      'danger': #f87171,
+      'success': #4ade80,
+      'ring': #5eead4,
+    ),
+  // Midnight (dark, indigo)
+  'midnight': (
+      'scheme': dark,
+      'bg': #0b1020,
+      'surface': #121a30,
+      'raised': #1a2440,
+      'border': #27335a,
+      'border_strong': #7384b8,
+      'text': #e8ecfa,
+      'muted': #a3aed0,
+      'accent': #818cf8,
+      'accent_hover': #a5b4fc,
+      'on_accent': #0b1020,
+      'danger': #fb7185,
+      'success': #4ade80,
+      'ring': #a5b4fc,
+    ),
+  // Forest (dark, green)
+  'forest': (
+      'scheme': dark,
+      'bg': #0c1410,
+      'surface': #121d17,
+      'raised': #19281f,
+      'border': #263a2e,
+      'border_strong': #6f8f7c,
+      'text': #e6f0e9,
+      'muted': #a0b5a8,
+      'accent': #5fd38d,
+      'accent_hover': #86e3ab,
+      'on_accent': #04180c,
+      'danger': #f87171,
+      'success': #86efac,
+      'ring': #86e3ab,
+    ),
+  // Ember (dark, orange)
+  'ember': (
+      'scheme': dark,
+      'bg': #14100d,
+      'surface': #1d1712,
+      'raised': #271f18,
+      'border': #3a2e24,
+      'border_strong': #8f7a68,
+      'text': #f3ebe4,
+      'muted': #b8a898,
+      'accent': #fb923c,
+      'accent_hover': #fdba74,
+      'on_accent': #1f0e02,
+      'danger': #f87171,
+      'success': #4ade80,
+      'ring': #fdba74,
+    ),
+  // Violet (dark, purple)
+  'violet': (
+      'scheme': dark,
+      'bg': #120e1a,
+      'surface': #1a1425,
+      'raised': #241c33,
+      'border': #352a4a,
+      'border_strong': #8a7aa8,
+      'text': #efe9f7,
+      'muted': #b1a5c7,
+      'accent': #c084fc,
+      'accent_hover': #d8b4fe,
+      'on_accent': #1b0b2b,
+      'danger': #fb7185,
+      'success': #4ade80,
+      'ring': #d8b4fe,
+    ),
+  // High contrast (dark, yellow)
+  'contrast': (
+      'scheme': dark,
+      'bg': #000000,
+      'surface': #0a0a0a,
+      'raised': #141414,
+      'border': #8a8a8a,
+      'border_strong': #ffffff,
+      'text': #ffffff,
+      'muted': #e0e0e0,
+      'accent': #ffd60a,
+      'accent_hover': #ffe55c,
+      'on_accent': #000000,
+      'danger': #ff8a8a,
+      'success': #7dff9b,
+      'ring': #ffd60a,
+    ),
+  // Sand (light, terracotta)
+  'sand': (
+      'scheme': light,
+      'bg': #f7f1e8,
+      'surface': #fffdf8,
+      'raised': #efe6d8,
+      'border': #ddd0bc,
+      'border_strong': #7a6a58,
+      'text': #2a2118,
+      'muted': #5e4f40,
+      'accent': #aa3f18,
+      'accent_hover': #8a3012,
+      'on_accent': #ffffff,
+      'danger': #b91c1c,
+      'success': #166534,
+      'ring': #aa3f18,
+    ),
+  // Ocean (light, blue)
+  'ocean': (
+      'scheme': light,
+      'bg': #f2f7fb,
+      'surface': #ffffff,
+      'raised': #e4eef6,
+      'border': #cddbe8,
+      'border_strong': #627a90,
+      'text': #0f1b28,
+      'muted': #435566,
+      'accent': #0b63c5,
+      'accent_hover': #084c99,
+      'on_accent': #ffffff,
+      'danger': #b91c1c,
+      'success': #166534,
+      'ring': #0b63c5,
+    ),
+  // Rose (light, crimson)
+  'rose': (
+      'scheme': light,
+      'bg': #fbf4f6,
+      'surface': #ffffff,
+      'raised': #f5e6ea,
+      'border': #e6cfd6,
+      'border_strong': #86606c,
+      'text': #24121a,
+      'muted': #5c4350,
+      'accent': #be1e5b,
+      'accent_hover': #9a1549,
+      'on_accent': #ffffff,
+      'danger': #b91c1c,
+      'success': #166534,
+      'ring': #be1e5b,
+    )
+);
+
+@mixin theme-vars($t) {
+  color-scheme: map.get($t, 'scheme');
+  --color-bg: #{map.get($t, 'bg')};
+  --color-surface: #{map.get($t, 'surface')};
+  --color-surface-raised: #{map.get($t, 'raised')};
+  --color-border: #{map.get($t, 'border')};
+  --color-border-strong: #{map.get($t, 'border_strong')};
+  --color-text: #{map.get($t, 'text')};
+  --color-text-muted: #{map.get($t, 'muted')};
+  --color-accent: #{map.get($t, 'accent')};
+  --color-accent-hover: #{map.get($t, 'accent_hover')};
+  --color-on-accent: #{map.get($t, 'on_accent')};
+  --color-danger: #{map.get($t, 'danger')};
+  --color-success: #{map.get($t, 'success')};
+  --color-focus-ring: #{map.get($t, 'ring')};
+
+  @if map.get($t, 'scheme') ==dark {
+    --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.5);
+    --shadow-md: 0 6px 20px rgb(0 0 0 / 0.45);
+  } @else {
+    --shadow-sm: 0 1px 2px rgb(18 22 25 / 0.08);
+    --shadow-md: 0 6px 20px rgb(18 22 25 / 0.1);
+  }
+}
+
+:root {
+  @include theme-vars(map.get($themes, 'light'));
+
+  // Typography. One stack for both languages: Latin glyphs come from Inter,
+  // Arabic glyphs from IBM Plex Sans Arabic (each font only covers its own script).
+  --font-sans:
+    'Inter Variable', 'IBM Plex Sans Arabic', system-ui, -apple-system, 'Segoe UI', Roboto,
+    sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-xl: clamp(1.375rem, 1.2rem + 0.6vw, 1.625rem);
+  --text-2xl: clamp(1.625rem, 1.3rem + 1.2vw, 2.125rem);
+  --text-3xl: clamp(2rem, 1.5rem + 2vw, 3rem);
+  --text-hero: clamp(2.5rem, 1.6rem + 4vw, 4.5rem);
+
+  --leading-body: 1.65;
+  --leading-heading: 1.15;
+  --tracking-heading: -0.02em;
+
+  // Spacing scale (4px base)
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
+
+  // Shape, layout and motion
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+  --container-max: 72rem;
+  --reading-max: 42rem;
+  --gutter: clamp(1rem, 4vw, 2rem);
+  --header-height: 4rem;
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+// Arabic: slightly looser lines, and no negative letter-spacing (it breaks letter joining).
+:root:lang(ar) {
+  --leading-body: 1.9;
+  --leading-heading: 1.4;
+  --tracking-heading: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    @include theme-vars(map.get($themes, 'dark'));
+  }
+}
+
+@each $name, $theme in $themes {
+  :root[data-theme='#{$name}'] {
+    @include theme-vars($theme);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0.01ms;
+    --duration-base: 0.01ms;
+  }
+}
