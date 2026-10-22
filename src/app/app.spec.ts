@@ -20,6 +20,13 @@ describe('App', () => {
     expect(compiled.querySelector('main#main h1')?.textContent).toContain('Diea Ikhlayel');
   });
 
+  it('should include the theme switcher in the header', async () => {
+    const fixture = TestBed.createComponent(App);
+    await fixture.whenStable();
+    const el = fixture.nativeElement as HTMLElement;
+    expect(el.querySelector('header app-theme-switcher select')).not.toBeNull();
+  });
+
   it('should provide a skip link to the main content', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();

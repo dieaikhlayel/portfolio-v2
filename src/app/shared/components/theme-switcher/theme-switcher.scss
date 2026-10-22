@@ -1,0 +1,24 @@
+.theme-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.theme-switcher__select {
+  min-block-size: 2.5rem;
+  padding-block: var(--space-1);
+  padding-inline: var(--space-3);
+  font: inherit;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: border-color var(--duration-fast) var(--ease-out);
+
+  &:hover {
+    border-color: var(--color-accent);
+  }
+}

@@ -6,6 +6,30 @@
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Portfolio of Diea Ikhlayel, a full-stack web developer." />
+    <script>
+      // Apply the saved theme before first paint so the page never flashes the wrong theme.
+      // Keep this list in sync with THEME_IDS in src/app/core/theme/theme.model.ts (a test checks it).
+      (function () {
+        try {
+          var t = localStorage.getItem('portfolio-theme');
+          var ids = [
+            'light',
+            'dark',
+            'midnight',
+            'forest',
+            'ember',
+            'violet',
+            'contrast',
+            'sand',
+            'ocean',
+            'rose',
+          ];
+          if (t && ids.indexOf(t) !== -1) {
+            document.documentElement.setAttribute('data-theme', t);
+          }
+        } catch (e) {}
+      })();
+    </script>
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
   </head>
   <body>
