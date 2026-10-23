@@ -3,7 +3,8 @@ import { ThemeChoice } from '../../core/theme/theme.model';
 export const en = {
   meta: {
     title: 'Diea Ikhlayel | Portfolio',
-    description: 'Portfolio of Diea Ikhlayel, a full-stack web developer.',
+    description:
+      'Portfolio of Diea Ikhlayel, a full-stack developer with experience in technical support and knowledge of cybersecurity.',
   },
   a11y: {
     skipToContent: 'Skip to main content',
@@ -13,9 +14,9 @@ export const en = {
   },
   home: {
     hero: {
-      role: 'Frontend / full-stack developer',
+      role: 'Full-Stack Developer | Technical Support | Cybersecurity',
       intro:
-        'I build web applications, from Angular interfaces to the APIs and databases behind them. Browse my projects or get in touch.',
+        'I build web applications using modern frontend and backend technologies, with experience in technical support and a solid understanding of cybersecurity fundamentals. I enjoy solving technical problems, troubleshooting systems, and developing secure, reliable, and user-friendly solutions.',
       viewProjects: 'View projects',
       contactMe: 'Contact me',
     },
