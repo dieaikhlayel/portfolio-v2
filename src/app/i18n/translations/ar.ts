@@ -11,8 +11,17 @@ export const ar: Translations = {
   },
   site: {
     name: 'ضياء إخليل',
-    underConstruction: 'الموقع قيد الإنشاء.',
   },
+  home: {
+    hero: {
+      role: 'مطوّر واجهات أمامية ومطوّر ويب متكامل',
+      intro:
+        'أبني تطبيقات ويب، من واجهات Angular إلى واجهات البرمجة وقواعد البيانات التي تقف خلفها. تصفّح مشاريعي أو تواصل معي.',
+      viewProjects: 'عرض المشاريع',
+      contactMe: 'تواصل معي',
+    },
+  },
+
   theme: {
     label: 'المظهر',
     options: {

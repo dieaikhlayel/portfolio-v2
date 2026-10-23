@@ -1,0 +1,32 @@
+.hero {
+  display: grid;
+  gap: var(--space-5);
+  max-inline-size: 48rem;
+  padding-block: var(--space-8) var(--space-9);
+}
+
+.hero__name {
+  margin: 0;
+  font-size: var(--text-hero);
+}
+
+.hero__role {
+  margin: 0;
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.hero__intro {
+  margin: 0;
+  max-inline-size: var(--reading-max);
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-block-start: var(--space-3);
+}

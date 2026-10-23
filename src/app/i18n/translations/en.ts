@@ -10,7 +10,15 @@ export const en = {
   },
   site: {
     name: 'Diea Ikhlayel',
-    underConstruction: 'Portfolio under construction.',
+  },
+  home: {
+    hero: {
+      role: 'Frontend / full-stack developer',
+      intro:
+        'I build web applications, from Angular interfaces to the APIs and databases behind them. Browse my projects or get in touch.',
+      viewProjects: 'View projects',
+      contactMe: 'Contact me',
+    },
   },
   theme: {
     label: 'Theme',

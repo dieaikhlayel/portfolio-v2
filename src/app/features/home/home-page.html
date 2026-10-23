@@ -1,0 +1,13 @@
+<section class="hero">
+  <h1 class="hero__name">{{ i18n.t().site.name }}</h1>
+  <p class="hero__role">{{ i18n.t().home.hero.role }}</p>
+  <p class="hero__intro">{{ i18n.t().home.hero.intro }}</p>
+  <div class="hero__actions">
+    <a class="btn btn--primary" [routerLink]="['/', i18n.lang(), 'projects']">
+      {{ i18n.t().home.hero.viewProjects }}
+    </a>
+    <a class="btn btn--secondary" [routerLink]="['/', i18n.lang(), 'contact']">
+      {{ i18n.t().home.hero.contactMe }}
+    </a>
+  </div>
+</section>
