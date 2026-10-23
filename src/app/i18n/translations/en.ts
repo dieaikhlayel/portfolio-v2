@@ -1,0 +1,36 @@
+import { ThemeChoice } from '../../core/theme/theme.model';
+
+export const en = {
+  meta: {
+    title: 'Diea Ikhlayel | Portfolio',
+    description: 'Portfolio of Diea Ikhlayel, a full-stack web developer.',
+  },
+  a11y: {
+    skipToContent: 'Skip to main content',
+  },
+  site: {
+    name: 'Diea Ikhlayel',
+    underConstruction: 'Portfolio under construction.',
+  },
+  theme: {
+    label: 'Theme',
+    options: {
+      system: 'System',
+      light: 'Paper (light)',
+      dark: 'Charcoal (dark)',
+      midnight: 'Midnight',
+      forest: 'Forest',
+      ember: 'Ember',
+      violet: 'Violet',
+      contrast: 'High contrast',
+      sand: 'Sand',
+      ocean: 'Ocean',
+      rose: 'Rose',
+    } satisfies Record<ThemeChoice, string>,
+  },
+  language: {
+    switchTo: 'Switch language',
+  },
+};
+
+export type Translations = typeof en;

@@ -1,0 +1,11 @@
+<a
+  class="language-switcher"
+  [routerLink]="link().commands"
+  [queryParams]="link().queryParams"
+  [fragment]="link().fragment"
+  [attr.lang]="target()"
+  [attr.hreflang]="target()"
+  [attr.aria-label]="i18n.t().language.switchTo + ': ' + targetName()"
+>
+  {{ targetName() }}
+</a>

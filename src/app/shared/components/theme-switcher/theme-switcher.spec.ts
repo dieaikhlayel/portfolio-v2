@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
-import { THEME_OPTIONS } from '../../../core/theme/theme.model';
+import { THEME_CHOICES } from '../../../core/theme/theme.model';
+import { I18nService } from '../../../i18n/i18n.service';
 import { ThemeSwitcher } from './theme-switcher';
 
 describe('ThemeSwitcher', () => {
@@ -13,8 +14,19 @@ describe('ThemeSwitcher', () => {
     await fixture.whenStable();
     const el = fixture.nativeElement as HTMLElement;
     expect(el.querySelector('label select')).not.toBeNull();
-    expect(el.querySelectorAll('option').length).toBe(THEME_OPTIONS.length);
-    expect(THEME_OPTIONS.length).toBe(11);
+    expect(el.querySelectorAll('option').length).toBe(THEME_CHOICES.length);
+    expect(THEME_CHOICES.length).toBe(11);
+  });
+
+  it('shows English labels by default and Arabic labels on the Arabic site', async () => {
+    const fixture = TestBed.createComponent(ThemeSwitcher);
+    await fixture.whenStable();
+    const el = fixture.nativeElement as HTMLElement;
+    expect(el.querySelector('.theme-switcher__label')?.textContent?.trim()).toBe('Theme');
+    TestBed.inject(I18nService).setLang('ar');
+    await fixture.whenStable();
+    expect(el.querySelector('.theme-switcher__label')?.textContent?.trim()).toBe('المظهر');
+    expect(el.querySelector('option')?.textContent?.trim()).toBe('النظام');
   });
 
   it('applies the chosen theme to the page', async () => {

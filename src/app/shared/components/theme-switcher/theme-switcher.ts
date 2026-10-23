@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { THEME_OPTIONS, isThemeChoice } from '../../../core/theme/theme.model';
+import { THEME_CHOICES, isThemeChoice } from '../../../core/theme/theme.model';
 import { ThemeService } from '../../../core/theme/theme.service';
+import { I18nService } from '../../../i18n/i18n.service';
 
 @Component({
   selector: 'app-theme-switcher',
@@ -10,7 +11,8 @@ import { ThemeService } from '../../../core/theme/theme.service';
 })
 export class ThemeSwitcher {
   protected readonly theme = inject(ThemeService);
-  protected readonly options = THEME_OPTIONS;
+  protected readonly i18n = inject(I18nService);
+  protected readonly choices = THEME_CHOICES;
 
   protected onChange(event: Event): void {
     const value = (event.target as HTMLSelectElement).value;

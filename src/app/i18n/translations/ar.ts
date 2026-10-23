@@ -1,0 +1,35 @@
+import { Translations } from './en';
+
+// Typed against the English dictionary: a missing or extra key is a compile error.
+export const ar: Translations = {
+  meta: {
+    title: 'ضياء إخليل | الملف الشخصي',
+    description: 'الملف الشخصي لـ ضياء إخليل، مطوّر ويب متكامل.',
+  },
+  a11y: {
+    skipToContent: 'انتقل إلى المحتوى الرئيسي',
+  },
+  site: {
+    name: 'ضياء إخليل',
+    underConstruction: 'الموقع قيد الإنشاء.',
+  },
+  theme: {
+    label: 'المظهر',
+    options: {
+      system: 'النظام',
+      light: 'ورقي (فاتح)',
+      dark: 'فحمي (داكن)',
+      midnight: 'منتصف الليل',
+      forest: 'الغابة',
+      ember: 'الجمر',
+      violet: 'بنفسجي',
+      contrast: 'تباين عالٍ',
+      sand: 'رملي',
+      ocean: 'المحيط',
+      rose: 'وردي',
+    },
+  },
+  language: {
+    switchTo: 'تغيير اللغة',
+  },
+};

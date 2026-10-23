@@ -1,10 +1,13 @@
 import { TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
 import { App } from './app';
+import { routes } from './app.routes';
 
 describe('App', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [App],
+      providers: [provideRouter(routes)],
     }).compileComponents();
   });
 
@@ -13,24 +16,20 @@ describe('App', () => {
     expect(fixture.componentInstance).toBeTruthy();
   });
 
-  it('should render a main landmark with the site heading', async () => {
-    const fixture = TestBed.createComponent(App);
-    await fixture.whenStable();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('main#main h1')?.textContent).toContain('Diea Ikhlayel');
-  });
-
-  it('should include the theme switcher in the header', async () => {
+  it('should render the header with both switchers and a main landmark', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const el = fixture.nativeElement as HTMLElement;
+    expect(el.querySelector('header app-language-switcher a')).not.toBeNull();
     expect(el.querySelector('header app-theme-switcher select')).not.toBeNull();
+    expect(el.querySelector('main#main')).not.toBeNull();
   });
 
-  it('should provide a skip link to the main content', async () => {
+  it('should provide a translated skip link to the main content', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const link = (fixture.nativeElement as HTMLElement).querySelector('a.skip-link');
     expect(link?.getAttribute('href')).toBe('#main');
+    expect(link?.textContent?.trim()).toBe('Skip to main content');
   });
 });
