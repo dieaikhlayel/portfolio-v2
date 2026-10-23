@@ -32,4 +32,18 @@ export const ar: Translations = {
   language: {
     switchTo: 'تغيير اللغة',
   },
+  nav: {
+    primary: 'التنقل الرئيسي',
+    menu: 'القائمة',
+    projects: 'المشاريع',
+    about: 'نبذة عني',
+    contact: 'تواصل معي',
+  },
+  pages: {
+    comingSoon: 'هذه الصفحة قادمة قريبًا.',
+  },
+  footer: {
+    email: 'البريد الإلكتروني',
+    note: 'بُني باستخدام Angular.',
+  },
 };

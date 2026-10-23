@@ -31,6 +31,20 @@ export const en = {
   language: {
     switchTo: 'Switch language',
   },
+  nav: {
+    primary: 'Primary',
+    menu: 'Menu',
+    projects: 'Projects',
+    about: 'About',
+    contact: 'Contact',
+  },
+  pages: {
+    comingSoon: 'This page is coming soon.',
+  },
+  footer: {
+    email: 'Email',
+    note: 'Built with Angular.',
+  },
 };
 
 export type Translations = typeof en;

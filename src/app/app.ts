@@ -1,11 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { SiteFooter } from './core/layout/site-footer/site-footer';
+import { SiteHeader } from './core/layout/site-header/site-header';
 import { I18nService } from './i18n/i18n.service';
-import { LanguageSwitcher } from './shared/components/language-switcher/language-switcher';
-import { ThemeSwitcher } from './shared/components/theme-switcher/theme-switcher';
 
 @Component({
-  imports: [RouterOutlet, LanguageSwitcher, ThemeSwitcher],
+  imports: [RouterOutlet, SiteHeader, SiteFooter],
   selector: 'app-root',
   styleUrl: './app.scss',
   templateUrl: './app.html',

@@ -16,13 +16,14 @@ describe('App', () => {
     expect(fixture.componentInstance).toBeTruthy();
   });
 
-  it('should render the header with both switchers and a main landmark', async () => {
+  it('should render a header, a main landmark and a footer', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const el = fixture.nativeElement as HTMLElement;
     expect(el.querySelector('header app-language-switcher a')).not.toBeNull();
     expect(el.querySelector('header app-theme-switcher select')).not.toBeNull();
     expect(el.querySelector('main#main')).not.toBeNull();
+    expect(el.querySelector('footer')).not.toBeNull();
   });
 
   it('should provide a translated skip link to the main content', async () => {

@@ -1,0 +1,144 @@
+.site-header {
+  position: relative;
+  border-block-end: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  min-block-size: var(--header-height);
+}
+
+.brand {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--color-accent);
+  }
+}
+
+.menu-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-block-size: 2.75rem;
+  padding-inline: var(--space-3);
+  font: inherit;
+  color: var(--color-text);
+  background: transparent;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+}
+
+// Three bars drawn with CSS (decorative; the button's text is its accessible name).
+.menu-toggle__bars {
+  position: relative;
+  inline-size: 1.125rem;
+  block-size: 2px;
+  background: currentcolor;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inline-size: 100%;
+    block-size: 2px;
+    background: currentcolor;
+  }
+
+  &::before {
+    inset-block-start: -6px;
+  }
+
+  &::after {
+    inset-block-start: 6px;
+  }
+}
+
+// Small screens: the menu is a panel under the header, hidden until opened.
+.menu {
+  display: none;
+  position: absolute;
+  inset-inline: 0;
+  inset-block-start: 100%;
+  z-index: 50;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--gutter);
+  background: var(--color-surface);
+  border-block-end: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+
+  &.is-open {
+    display: flex;
+  }
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  a {
+    display: block;
+    padding: var(--space-3) var(--space-2);
+    color: var(--color-text);
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+
+    &:hover,
+    &.is-active {
+      color: var(--color-accent);
+    }
+
+    &.is-active {
+      font-weight: 600;
+    }
+  }
+}
+
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+// Wide screens: everything sits in one row and the toggle disappears.
+@media (min-width: 48rem) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .menu {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-5);
+    padding: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .nav {
+    flex-direction: row;
+    gap: var(--space-2);
+
+    a {
+      padding: var(--space-2) var(--space-3);
+    }
+  }
+}

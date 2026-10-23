@@ -1,0 +1,39 @@
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" [routerLink]="['/', i18n.lang()]">{{ i18n.t().site.name }}</a>
+
+    <button
+      #toggle
+      type="button"
+      class="menu-toggle"
+      aria-controls="site-menu"
+      [attr.aria-expanded]="menuOpen()"
+      (click)="toggleMenu()"
+    >
+      <span class="menu-toggle__bars" aria-hidden="true"></span>
+      <span>{{ i18n.t().nav.menu }}</span>
+    </button>
+
+    <div id="site-menu" class="menu" [class.is-open]="menuOpen()">
+      <nav [attr.aria-label]="i18n.t().nav.primary">
+        <ul class="nav">
+          @for (link of links; track link) {
+            <li>
+              <a
+                [routerLink]="['/', i18n.lang(), link]"
+                routerLinkActive="is-active"
+                ariaCurrentWhenActive="page"
+              >
+                {{ i18n.t().nav[link] }}
+              </a>
+            </li>
+          }
+        </ul>
+      </nav>
+      <div class="tools">
+        <app-language-switcher />
+        <app-theme-switcher />
+      </div>
+    </div>
+  </div>
+</header>
