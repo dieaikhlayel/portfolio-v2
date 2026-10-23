@@ -43,4 +43,5 @@ jobs:
       - name: Verify build output
         run: |
           test -f dist/portfolio-v2/browser/index.html
-          grep -q '<base href="/portfolio-v2/">' dist/portfolio-v2/browser/index.html
+          test -f dist/portfolio-v2/browser/en/index.html
+          grep -q '<base href="/portfolio-v2/">' dist/portfolio-v2/browser/en/index.html
