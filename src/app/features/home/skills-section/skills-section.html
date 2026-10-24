@@ -1,0 +1,23 @@
+<section class="skills" aria-labelledby="skills-title">
+  <h2 id="skills-title" class="skills__title">{{ i18n.t().home.skills.title }}</h2>
+  <p class="skills__intro">{{ i18n.t().home.skills.intro }}</p>
+
+  <div class="skills__groups">
+    @for (group of groups; track group.id) {
+      <div class="skills__group">
+        <h3 class="skills__group-title">{{ i18n.t().home.skills.groups[group.id] }}</h3>
+        <ul class="skills__list">
+          @for (skill of group.items; track skill.en) {
+            <li
+              class="skills__tag"
+              [attr.lang]="isTranslated(skill) ? 'ar' : 'en'"
+              [attr.dir]="isTranslated(skill) ? 'rtl' : 'ltr'"
+            >
+              {{ label(skill) }}
+            </li>
+          }
+        </ul>
+      </div>
+    }
+  </div>
+</section>

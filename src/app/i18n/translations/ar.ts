@@ -21,6 +21,17 @@ export const ar: Translations = {
       viewProjects: 'عرض المشاريع',
       contactMe: 'تواصل معي',
     },
+    skills: {
+      title: 'المهارات',
+      intro: 'تقنيات عملت بها في مشاريعي وتدريبي.',
+      groups: {
+        frontend: 'الواجهات الأمامية',
+        backend: 'الخلفية البرمجية',
+        security: 'الشبكات والأمن',
+        support: 'الدعم التقني وخدمة العملاء',
+        tools: 'البيانات والأدوات',
+      },
+    },
   },
   theme: {
     label: 'المظهر',

@@ -4,7 +4,7 @@ export const en = {
   meta: {
     title: 'Diea Ikhlayel | Portfolio',
     description:
-      'Portfolio of Diea Ikhlayel, a full-stack developer with experience in technical support and knowledge of cybersecurity.',
+      'Portfolio of Diea Ikhlayel, a full-stack web developer with IT support experience and cybersecurity knowledge.',
   },
   a11y: {
     skipToContent: 'Skip to main content',
@@ -14,11 +14,22 @@ export const en = {
   },
   home: {
     hero: {
-      role: 'Full-Stack Developer | Technical Support | Cybersecurity',
+      role: 'Full-stack web developer with IT support and cybersecurity skills',
       intro:
-        'I build web applications using modern frontend and backend technologies, with experience in technical support and a solid understanding of cybersecurity fundamentals. I enjoy solving technical problems, troubleshooting systems, and developing secure, reliable, and user-friendly solutions.',
+        'I develop web applications using frontend and backend technologies, and I have IT support experience and knowledge of cybersecurity fundamentals. I enjoy solving technical problems, troubleshooting, and building secure, reliable and easy-to-use solutions. Browse my projects or get in touch.',
       viewProjects: 'View projects',
       contactMe: 'Contact me',
+    },
+    skills: {
+      title: 'Skills',
+      intro: 'Technologies I have worked with in my projects and training.',
+      groups: {
+        frontend: 'Frontend',
+        backend: 'Backend',
+        security: 'Networking and security',
+        support: 'IT support and service',
+        tools: 'Data and tools',
+      },
     },
   },
   theme: {
