@@ -41,6 +41,11 @@ export const en = {
     },
   },
 
+  contact: {
+    intro:
+      'Have a question or want to work together? Email is the best way to reach me. You can also find me on LinkedIn and GitHub.',
+    email: 'Email',
+  },
   theme: {
     label: 'Theme',
     options: {

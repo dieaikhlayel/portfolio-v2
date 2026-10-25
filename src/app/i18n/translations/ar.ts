@@ -41,6 +41,11 @@ export const ar: Translations = {
       languages: 'اللغات',
     },
   },
+  contact: {
+    intro:
+      'هل لديك سؤال أو ترغب في العمل معًا؟ البريد الإلكتروني هو أفضل وسيلة للتواصل معي، ويمكنك أيضًا العثور عليّ عبر LinkedIn وGitHub.',
+    email: 'البريد الإلكتروني',
+  },
   theme: {
     label: 'المظهر',
     options: {

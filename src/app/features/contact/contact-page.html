@@ -1,0 +1,25 @@
+<article class="contact">
+  <h1 class="contact__title">{{ i18n.t().nav.contact }}</h1>
+  <p class="contact__intro">{{ i18n.t().contact.intro }}</p>
+
+  <dl class="contact__list">
+    <div class="contact__item">
+      <dt>{{ i18n.t().contact.email }}</dt>
+      <dd>
+        <a [href]="'mailto:' + links.email" lang="en" dir="ltr">{{ links.email }}</a>
+      </dd>
+    </div>
+    <div class="contact__item">
+      <dt>LinkedIn</dt>
+      <dd>
+        <a [href]="links.linkedin" rel="noopener" lang="en" dir="ltr">{{ linkedinText }}</a>
+      </dd>
+    </div>
+    <div class="contact__item">
+      <dt>GitHub</dt>
+      <dd>
+        <a [href]="links.github" rel="noopener" lang="en" dir="ltr">{{ githubText }}</a>
+      </dd>
+    </div>
+  </dl>
+</article>
