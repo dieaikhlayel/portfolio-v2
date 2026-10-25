@@ -25,11 +25,6 @@ export const EDUCATION: readonly AboutEntry[] = [
     org: { en: 'Hebron University', ar: 'جامعة الخليل' },
     period: { en: 'Graduated 2023', ar: 'تخرّج عام 2023' },
   },
-  {
-    title: { en: 'Full Stack JavaScript Nanodegree' },
-    org: { en: 'Udacity' },
-    period: { en: '2025', ar: '2025' },
-  },
 ];
 
 export const EXPERIENCE: readonly AboutEntry[] = [
@@ -55,19 +50,29 @@ export const EXPERIENCE: readonly AboutEntry[] = [
 
 export const CERTIFICATES: readonly AboutEntry[] = [
   {
-    title: { en: 'Customer Service Fundamentals' },
+    title: { en: 'Introduction to Modern AI' },
+    org: { en: 'Cisco Networking Academy' },
+    period: { en: 'Oct 2026', ar: 'تشرين الأول 2026' },
+  },
+  {
+    title: { en: 'Customer Services' },
     org: { en: 'Alison' },
-    period: { en: '2025', ar: '2025' },
+    period: { en: 'Dec 2025', ar: 'كانون الأول 2025' },
+  },
+  {
+    title: { en: 'Full Stack JavaScript Developer Certificate Nanodegree' },
+    org: { en: 'Udacity' },
+    period: { en: 'Nov 2025', ar: 'تشرين الثاني 2025' },
   },
   {
     title: { en: 'Introduction to Cybersecurity' },
-    org: { en: 'Cisco' },
+    org: { en: 'Cisco Networking Academy' },
     period: { en: '2025', ar: '2025' },
   },
   {
-    title: { en: 'Introduction to Modern AI' },
-    org: { en: 'Cisco Networking Academy' },
-    period: { en: '2026', ar: '2026' },
+    title: { en: 'JournalismAI Discovery course Certificate' },
+    org: { en: 'ARIJ Network' },
+    period: { en: 'Aug 2025', ar: 'آب 2025' },
   },
 ];
 
