@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { I18nService } from '../../i18n/i18n.service';
 
-export type PageKey = 'projects' | 'about' | 'contact';
+export type PageKey = 'projects' | 'contact';
 
 /** Temporary page for sections that are not built yet. Each one is replaced by its real page. */
 @Component({

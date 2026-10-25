@@ -32,6 +32,15 @@ export const en = {
       },
     },
   },
+  about: {
+    sections: {
+      education: 'Education',
+      experience: 'Experience',
+      certificates: 'Certificates',
+      languages: 'Languages',
+    },
+  },
+
   theme: {
     label: 'Theme',
     options: {

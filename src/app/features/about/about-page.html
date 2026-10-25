@@ -1,0 +1,47 @@
+<article class="about">
+  <h1 class="about__title">{{ i18n.t().nav.about }}</h1>
+
+  @for (section of sections; track section.id) {
+    <section class="about__section" [attr.aria-labelledby]="'about-' + section.id">
+      <h2 class="about__heading" [id]="'about-' + section.id">
+        {{ i18n.t().about.sections[section.id] }}
+      </h2>
+      <ul class="entries">
+        @for (entry of section.entries; track entry.title.en + entry.org.en) {
+          @let title = view(entry.title);
+          @let org = view(entry.org);
+          <li class="entry">
+            <h3 class="entry__title">
+              <span [attr.lang]="title.lang" [attr.dir]="title.dir">{{ title.text }}</span>
+            </h3>
+            <p class="entry__meta">
+              <span [attr.lang]="org.lang" [attr.dir]="org.dir">{{ org.text }}</span>
+              @if (entry.period) {
+                @let period = view(entry.period);
+                <span [attr.lang]="period.lang" [attr.dir]="period.dir">{{ period.text }}</span>
+              }
+            </p>
+          </li>
+        }
+      </ul>
+    </section>
+  }
+
+  <section class="about__section" aria-labelledby="about-languages">
+    <h2 class="about__heading" id="about-languages">{{ i18n.t().about.sections.languages }}</h2>
+    <ul class="entries">
+      @for (language of languages; track language.name.en) {
+        @let name = view(language.name);
+        @let level = view(language.level);
+        <li class="entry">
+          <h3 class="entry__title">
+            <span [attr.lang]="name.lang" [attr.dir]="name.dir">{{ name.text }}</span>
+          </h3>
+          <p class="entry__meta">
+            <span [attr.lang]="level.lang" [attr.dir]="level.dir">{{ level.text }}</span>
+          </p>
+        </li>
+      }
+    </ul>
+  </section>
+</article>

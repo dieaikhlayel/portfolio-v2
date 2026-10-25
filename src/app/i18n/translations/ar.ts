@@ -33,6 +33,14 @@ export const ar: Translations = {
       },
     },
   },
+  about: {
+    sections: {
+      education: 'التعليم',
+      experience: 'الخبرات',
+      certificates: 'الشهادات',
+      languages: 'اللغات',
+    },
+  },
   theme: {
     label: 'المظهر',
     options: {
