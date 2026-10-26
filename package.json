@@ -5,10 +5,11 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:preview": "ng build --base-href /portfolio-v2/",
+    "build:preview": "ng build --base-href /portfolio-v2/ && node scripts/seo-files.mjs --site https://dieaikhlayel.github.io/portfolio-v2/ --noindex",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "build:release": "ng build --base-href /portfolio-website/ && node scripts/seo-files.mjs --site https://dieaikhlayel.github.io/portfolio-website/ --index"
   },
   "private": true,
   "packageManager": "npm@11.19.1",

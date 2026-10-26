@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { I18nService } from '../../i18n/i18n.service';
 
-export type PageKey = 'projects';
+type PlaceholderKey = 'projects';
 
 /** Temporary page for sections that are not built yet. Each one is replaced by its real page. */
 @Component({
@@ -14,5 +14,5 @@ export type PageKey = 'projects';
 })
 export class PlaceholderPage {
   protected readonly i18n = inject(I18nService);
-  protected readonly key = inject(ActivatedRoute).snapshot.data['page'] as PageKey;
+  protected readonly key = inject(ActivatedRoute).snapshot.data['page'] as PlaceholderKey;
 }

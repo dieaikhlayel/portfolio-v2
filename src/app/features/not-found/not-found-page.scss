@@ -1,0 +1,18 @@
+.not-found {
+  display: grid;
+  gap: var(--space-4);
+  justify-items: start;
+  max-inline-size: 36rem;
+  padding-block: var(--space-7);
+}
+
+.not-found__title {
+  margin: 0;
+  font-size: var(--text-3xl);
+}
+
+.not-found__message {
+  margin: 0;
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+}

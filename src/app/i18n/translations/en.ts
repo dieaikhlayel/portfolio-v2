@@ -46,6 +46,11 @@ export const en = {
       'Have a question or want to work together? Email is the best way to reach me. You can also find me on LinkedIn and GitHub.',
     email: 'Email',
   },
+  notFound: {
+    title: 'Page not found',
+    message: 'The page you are looking for does not exist or has moved.',
+    home: 'Back to the home page',
+  },
   theme: {
     label: 'Theme',
     options: {

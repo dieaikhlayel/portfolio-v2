@@ -1,5 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { I18nService } from './i18n.service';
+import { ar } from './translations/ar';
+import { en } from './translations/en';
 
 describe('I18nService', () => {
   const root = document.documentElement;
@@ -21,7 +23,7 @@ describe('I18nService', () => {
     expect(root.getAttribute('lang')).toBe('ar');
     expect(root.getAttribute('dir')).toBe('rtl');
     expect(document.title).toBe(service.t().meta.title);
-    expect(document.title).toContain('الملف الشخصي');
+    expect(document.title).toBe(ar.meta.title);
   });
 
   it('keeps the meta description in step with the language', () => {
@@ -33,5 +35,25 @@ describe('I18nService', () => {
     service.setLang('en');
     TestBed.tick();
     expect(tag?.getAttribute('content')).toBe(service.t().meta.description);
+  });
+
+  it('puts the page name before the site name in the title', () => {
+    const service = TestBed.inject(I18nService);
+    service.setPage('about');
+    TestBed.tick();
+    expect(document.title).toBe(`${en.nav.about} | ${en.site.name}`);
+    service.setLang('ar');
+    service.setPage('contact');
+    TestBed.tick();
+    expect(document.title).toBe(`${ar.nav.contact} | ${ar.site.name}`);
+  });
+
+  it('goes back to the site title when there is no page name', () => {
+    const service = TestBed.inject(I18nService);
+    service.setPage('projects');
+    TestBed.tick();
+    service.setPage(null);
+    TestBed.tick();
+    expect(document.title).toBe(en.meta.title);
   });
 });

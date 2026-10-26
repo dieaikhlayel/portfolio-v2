@@ -2,6 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { provideRouter, Router } from '@angular/router';
 import { App } from '../../app';
 import { routes } from '../../app.routes';
+import { en } from '../../i18n/translations/en';
 
 describe('Section pages', () => {
   beforeEach(() => {
@@ -27,8 +28,8 @@ describe('Section pages', () => {
     expect(await heading('/ar/contact')).toBe('تواصل معي');
   });
 
-  it('redirects an unknown address to the English home page', async () => {
-    expect(await heading('/nonsense')).toBe('Diea Ikhlayel');
+  it('shows the 404 page for an unknown address', async () => {
+    expect(await heading('/nonsense')).toBe(en.notFound.title);
   });
 
   it('has exactly one h1 per page', async () => {
