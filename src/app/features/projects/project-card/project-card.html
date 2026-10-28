@@ -1,0 +1,45 @@
+@let p = project();
+@let name = view(p.name);
+@let summary = view(p.summary);
+
+<article class="project">
+  <h3 class="project__name">
+    <span [attr.lang]="name.lang" [attr.dir]="name.dir">{{ name.text }}</span>
+  </h3>
+
+  @if (p.badge) {
+    @let badge = view(p.badge);
+    <p class="project__badge">
+      <span [attr.lang]="badge.lang" [attr.dir]="badge.dir">{{ badge.text }}</span>
+    </p>
+  }
+
+  <p class="project__summary">
+    <span [attr.lang]="summary.lang" [attr.dir]="summary.dir">{{ summary.text }}</span>
+  </p>
+
+  <ul class="project__tech">
+    @for (item of p.tech; track item) {
+      <li class="project__tag" lang="en" dir="ltr">{{ item }}</li>
+    }
+  </ul>
+
+  @if (p.note) {
+    @let note = view(p.note);
+    <p class="project__note">
+      <strong>{{ i18n.t().projects.note }}:</strong>
+      <span [attr.lang]="note.lang" [attr.dir]="note.dir">{{ note.text }}</span>
+    </p>
+  }
+
+  <div class="project__links">
+    <a class="btn btn--secondary" [href]="p.links.repo" rel="noopener">
+      {{ i18n.t().projects.repo }}
+    </a>
+    @if (p.links.live) {
+      <a class="btn btn--primary" [href]="p.links.live" rel="noopener">
+        {{ i18n.t().projects.live }}
+      </a>
+    }
+  </div>
+</article>

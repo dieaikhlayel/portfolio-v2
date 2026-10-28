@@ -1,8 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 import { provideRouter, Router } from '@angular/router';
-import { App } from '../../app';
-import { routes } from '../../app.routes';
-import { en } from '../../i18n/translations/en';
+import { App } from '../app';
+import { routes } from '../app.routes';
+import { en } from '../i18n/translations/en';
 
 describe('Section pages', () => {
   beforeEach(() => {

@@ -51,6 +51,14 @@ export const en = {
     message: 'The page you are looking for does not exist or has moved.',
     home: 'Back to the home page',
   },
+  projects: {
+    intro: 'A selection of what I have built. Each project links to its source code.',
+    featured: 'Featured',
+    more: 'More projects',
+    repo: 'Source code',
+    live: 'Live demo',
+    note: 'Note',
+  },
   theme: {
     label: 'Theme',
     options: {
