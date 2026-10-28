@@ -1,0 +1,135 @@
+// Page transitions. They use the browser's View Transitions, switched on in app.config.ts.
+// Only the page content moves; the header and footer stay where they are.
+// The kind of transition is set on <html data-transition="..."> by core/transitions/page-transition.ts.
+
+:root {
+  --duration-page: 250ms;
+  --slide-dir: 1;
+}
+
+// Slides run the other way on right-to-left (Arabic) pages.
+:root[dir='rtl'] {
+  --slide-dir: -1;
+}
+
+.site-header {
+  view-transition-name: site-header;
+}
+
+.site-footer {
+  view-transition-name: site-footer;
+}
+
+main#main {
+  view-transition-name: page;
+}
+
+// Everything else is the same before and after, so show only the new version.
+::view-transition-old(root) {
+  display: none;
+}
+
+::view-transition-new(root) {
+  animation: none;
+}
+
+::view-transition-old(page),
+::view-transition-new(page) {
+  animation-duration: var(--duration-page);
+  animation-timing-function: var(--ease-out);
+  animation-fill-mode: both;
+}
+
+// Ordinary navigation: the old page fades out, the new one fades in while rising a little.
+:root[data-transition='rise']::view-transition-old(page) {
+  animation-name: page-fade-out;
+}
+
+:root[data-transition='rise']::view-transition-new(page) {
+  animation-name: page-rise-in;
+}
+
+// Moving along Home, Projects, About, Contact: slide in the direction of travel.
+:root[data-transition='forward']::view-transition-old(page) {
+  animation-name: page-slide-out-forward;
+}
+
+:root[data-transition='forward']::view-transition-new(page) {
+  animation-name: page-slide-in-forward;
+}
+
+:root[data-transition='backward']::view-transition-old(page) {
+  animation-name: page-slide-out-backward;
+}
+
+:root[data-transition='backward']::view-transition-new(page) {
+  animation-name: page-slide-in-backward;
+}
+
+// Switching language: a plain cross-fade.
+:root[data-transition='language']::view-transition-old(page) {
+  animation-name: page-fade-out;
+}
+
+:root[data-transition='language']::view-transition-new(page) {
+  animation-name: page-fade-in;
+}
+
+@keyframes page-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes page-rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem);
+  }
+}
+
+@keyframes page-slide-out-forward {
+  to {
+    opacity: 0;
+    transform: translateX(calc(var(--slide-dir) * -1.5rem));
+  }
+}
+
+@keyframes page-slide-in-forward {
+  from {
+    opacity: 0;
+    transform: translateX(calc(var(--slide-dir) * 1.5rem));
+  }
+}
+
+@keyframes page-slide-out-backward {
+  to {
+    opacity: 0;
+    transform: translateX(calc(var(--slide-dir) * 1.5rem));
+  }
+}
+
+@keyframes page-slide-in-backward {
+  from {
+    opacity: 0;
+    transform: translateX(calc(var(--slide-dir) * -1.5rem));
+  }
+}
+
+// Backup for the reduced-motion rule in page-transition.ts: no movement at all.
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+
+  ::view-transition-old(*) {
+    display: none;
+  }
+}
