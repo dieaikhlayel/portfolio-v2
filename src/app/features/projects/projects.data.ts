@@ -18,23 +18,75 @@ export interface Project {
 
 /**
  * Everything shown on the Projects page. Edit this file to change it.
- * Describe only what the repository really shows. Order here is the order on the page.
+ * Describe only what the repository really shows: open the repo and check the files have code.
+ * Order here is the order on the page.
  */
 export const PROJECTS: readonly Project[] = [
   {
-    id: 'devcollab',
+    id: 'finance-tracker',
     featured: true,
-    name: { en: 'DevCollab' },
+    name: { en: 'Finance Tracker' },
     summary: {
-      en: 'A full-stack application with an Angular frontend, a Spring Boot backend and a React admin dashboard.',
-      ar: 'تطبيق متكامل بواجهة أمامية بـ Angular وخلفية بـ Spring Boot ولوحة إدارة بـ React.',
+      en: 'A full-stack app for recording income and expenses: JWT accounts, categories, filterable and paginated transactions, and a dashboard of balances by category and month.',
+      ar: 'تطبيق متكامل لتسجيل الدخل والمصروفات: حسابات بمصادقة JWT وفئات ومعاملات قابلة للتصفية والتقسيم إلى صفحات، ولوحة تعرض الأرصدة حسب الفئة والشهر.',
     },
-    tech: ['Angular', 'TypeScript', 'Java', 'Spring Boot', 'React'],
+    tech: ['React', 'TypeScript', 'Redux Toolkit', 'Node.js', 'Express', 'MySQL', 'Zod', 'Docker'],
     note: {
-      en: 'The Angular frontend has no automated tests yet.',
-      ar: 'الواجهة الأمامية المبنية بـ Angular لا تحتوي على اختبارات آلية بعد.',
+      en: 'No automated tests yet.',
+      ar: 'لا توجد اختبارات آلية بعد.',
     },
-    links: { repo: 'https://github.com/dieaikhlayel/DevCollab' },
+    links: { repo: 'https://github.com/dieaikhlayel/finance-tracker' },
+  },
+  {
+    id: 'secure-task-manager',
+    featured: true,
+    name: { en: 'Secure Task Manager' },
+    summary: {
+      en: 'A task manager with JWT authentication and an audit log that records sign-ups, sign-ins and every task change. Spring Boot and Spring Security on the backend, React and TypeScript on the frontend.',
+      ar: 'تطبيق لإدارة المهام بمصادقة JWT وسجل تدقيق يسجّل إنشاء الحسابات وتسجيل الدخول وكل تغيير في المهام. خلفية بـ Spring Boot وSpring Security وواجهة بـ React وTypeScript.',
+    },
+    tech: [
+      'Java',
+      'Spring Boot',
+      'Spring Security',
+      'MySQL',
+      'React',
+      'TypeScript',
+      'Redux Toolkit',
+    ],
+    note: {
+      en: 'No automated tests yet.',
+      ar: 'لا توجد اختبارات آلية بعد.',
+    },
+    links: { repo: 'https://github.com/dieaikhlayel/secure-task-manager' },
+  },
+  {
+    id: 'deploymate',
+    featured: true,
+    name: { en: 'DeployMate' },
+    summary: {
+      en: 'A tool for deploying applications over SSH. It runs health checks after each deployment, can roll back, monitors servers and sends alerts, with a command-line interface and a small web app.',
+      ar: 'أداة لنشر التطبيقات عبر SSH. تجري فحوصات صحة بعد كل عملية نشر، ويمكنها التراجع عن النشر، وتراقب الخوادم وترسل التنبيهات، مع واجهة سطر أوامر وتطبيق ويب صغير.',
+    },
+    tech: ['Python', 'SSH', 'Docker', 'GitHub Actions'],
+    links: { repo: 'https://github.com/dieaikhlayel/deploymate' },
+  },
+  {
+    id: 'packet-sniffer',
+    featured: true,
+    name: { en: 'Network Packet Sniffer', ar: 'ملتقط حزم الشبكة' },
+    summary: {
+      en: 'A Python tool that captures network packets with raw sockets and parses TCP, UDP and ICMP traffic. Its analyzer detects traffic bursts and unusual high port numbers and exports a JSON report.',
+      ar: 'أداة بلغة Python تلتقط حزم الشبكة عبر المقابس الخام (raw sockets) وتحلّل حركة TCP وUDP وICMP. يكتشف المحلّل ارتفاع حركة البيانات المفاجئ وأرقام المنافذ العالية غير المعتادة ويصدّر تقريرًا بصيغة JSON.',
+    },
+    tech: ['Python', 'Raw sockets', 'Matplotlib'],
+    note: {
+      en: 'Capturing packets needs administrator (root) rights.',
+      ar: 'التقاط الحزم يتطلب صلاحيات المسؤول (root).',
+    },
+    links: {
+      repo: 'https://github.com/dieaikhlayel/Python_Projects/tree/main/Packet%20Sniffer',
+    },
   },
   {
     id: 'palestinian-cultural-heritage',
@@ -51,27 +103,12 @@ export const PROJECTS: readonly Project[] = [
     },
   },
   {
-    id: 'finsight-ai',
-    featured: true,
-    name: { en: 'FinSight AI' },
-    summary: {
-      en: 'The backend of FinSight AI: a FastAPI service with authentication, database migrations (SQLAlchemy and Alembic) and an OpenAI-powered AI service, with automated tests.',
-      ar: 'الجزء الخلفي من FinSight AI: خدمة FastAPI مع مصادقة المستخدمين وترحيل قواعد البيانات (SQLAlchemy وAlembic) وخدمة ذكاء اصطناعي مبنية على OpenAI، مع اختبارات آلية.',
-    },
-    tech: ['Python', 'FastAPI', 'SQLAlchemy', 'Alembic', 'PostgreSQL', 'OpenAI API'],
-    note: {
-      en: 'This repository contains the backend only.',
-      ar: 'يحتوي هذا المستودع على الجزء الخلفي فقط.',
-    },
-    links: { repo: 'https://github.com/dieaikhlayel/FinSight-AI' },
-  },
-  {
     id: 'storefront-backend',
-    featured: true,
+    featured: false,
     name: { en: 'StoreFront Backend' },
     summary: {
-      en: 'A REST API for an online store with products, users, orders and order items. It uses JWT authentication, bcrypt password hashing and PostgreSQL migrations, with tests included.',
-      ar: 'واجهة برمجية (REST API) لمتجر إلكتروني تشمل المنتجات والمستخدمين والطلبات وعناصر الطلب، مع مصادقة JWT وتشفير كلمات المرور بـ bcrypt وترحيلات PostgreSQL واختبارات مضمّنة.',
+      en: 'A REST API for an online store, built for the Udacity Full Stack JavaScript Nanodegree: products, users, orders and order items, with JWT authentication, bcrypt password hashing, PostgreSQL migrations and tests.',
+      ar: 'واجهة برمجية (REST API) لمتجر إلكتروني، بُنيت ضمن برنامج Udacity Full Stack JavaScript Nanodegree: المنتجات والمستخدمون والطلبات وعناصر الطلب، مع مصادقة JWT وتشفير كلمات المرور بـ bcrypt وترحيلات PostgreSQL واختبارات.',
     },
     tech: ['Node.js', 'Express', 'TypeScript', 'PostgreSQL', 'JWT', 'Docker'],
     note: {
@@ -81,30 +118,19 @@ export const PROJECTS: readonly Project[] = [
     links: { repo: 'https://github.com/dieaikhlayel/StoreFront-Backend' },
   },
   {
-    id: 'my-store',
+    id: 'devcollab',
     featured: false,
-    name: { en: 'My Store' },
+    name: { en: 'DevCollab' },
     summary: {
-      en: 'An Angular online-store front end with a product list, product pages, a shopping cart and an order confirmation page.',
-      ar: 'واجهة أمامية بـ Angular لمتجر إلكتروني: قائمة المنتجات وصفحات التفاصيل وسلة التسوق وصفحة تأكيد الطلب.',
+      en: 'A project-management app: a Spring Boot API for authentication, users, projects and tasks, an Angular frontend with a kanban board, and a React admin dashboard.',
+      ar: 'تطبيق لإدارة المشاريع: واجهة برمجية بـ Spring Boot للمصادقة والمستخدمين والمشاريع والمهام، وواجهة أمامية بـ Angular مع لوحة كانبان، ولوحة إدارة بـ React.',
     },
-    tech: ['Angular', 'TypeScript'],
-    links: { repo: 'https://github.com/dieaikhlayel/My-Store' },
-  },
-  {
-    id: 'image-processing-api',
-    featured: false,
-    name: { en: 'Image Processing API' },
-    summary: {
-      en: 'An API that resizes images on request and saves the results so they are not processed twice.',
-      ar: 'واجهة برمجية تغيّر حجم الصور عند الطلب وتحفظ النتائج حتى لا تُعالَج مرتين.',
-    },
-    tech: ['Node.js', 'Express', 'TypeScript', 'Sharp'],
+    tech: ['Angular', 'TypeScript', 'Java', 'Spring Boot', 'React'],
     note: {
-      en: 'Known limitation: the file name and the image size are not validated yet.',
-      ar: 'قيد معروف: اسم الملف وحجم الصورة لا يُتحقَّق منهما بعد.',
+      en: 'Work in progress: sprints, teams, comments, notifications and analytics have data models or screens, but their backend endpoints are not written yet.',
+      ar: 'قيد التطوير: للسبرنتات والفرق والتعليقات والإشعارات والتحليلات نماذج بيانات أو شاشات، لكن نقاط النهاية الخلفية الخاصة بها لم تُكتب بعد.',
     },
-    links: { repo: 'https://github.com/dieaikhlayel/Image-Processing-API' },
+    links: { repo: 'https://github.com/dieaikhlayel/DevCollab' },
   },
   {
     id: 'service-desk-tracker',
@@ -117,6 +143,17 @@ export const PROJECTS: readonly Project[] = [
     },
     tech: ['Java', 'Spring Boot', 'MySQL', 'React', 'TypeScript'],
     links: { repo: 'https://github.com/dieaikhlayel/service-desk-tracker' },
+  },
+  {
+    id: 'snake-challenge',
+    featured: false,
+    name: { en: 'Snake Challenge' },
+    summary: {
+      en: 'A Snake game with adjustable difficulty, themes and a saved high score. Frontend only, with no backend or database.',
+      ar: 'لعبة الثعبان بمستويات صعوبة وسمات قابلة للتغيير وأعلى نتيجة محفوظة. واجهة أمامية فقط، بلا خلفية أو قاعدة بيانات.',
+    },
+    tech: ['React', 'TypeScript', 'Redux Toolkit', 'Vite'],
+    links: { repo: 'https://github.com/dieaikhlayel/snake-challenge' },
   },
 ];
 

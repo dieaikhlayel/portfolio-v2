@@ -88,7 +88,9 @@ describe('projects data', () => {
 
   it('links only to the owner’s GitHub repositories and pages', () => {
     for (const p of PROJECTS) {
-      expect(p.links.repo, p.id).toMatch(/^https:\/\/github\.com\/dieaikhlayel\/[\w.-]+$/);
+      expect(p.links.repo, p.id).toMatch(
+        /^https:\/\/github\.com\/dieaikhlayel\/[\w.-]+(\/tree\/main\/[\w.%/-]+)?$/,
+      );
       if (p.links.live) {
         expect(p.links.live, p.id).toMatch(/^https:\/\/dieaikhlayel\.github\.io\/[\w.-]+\/?$/);
       }
