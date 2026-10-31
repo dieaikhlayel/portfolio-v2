@@ -29,6 +29,7 @@ export const ar: Translations = {
         backend: 'الخلفية البرمجية',
         security: 'الشبكات والأمن',
         support: 'الدعم التقني وخدمة العملاء',
+        systems: 'الأنظمة',
         tools: 'البيانات والأدوات',
       },
     },
@@ -45,6 +46,7 @@ export const ar: Translations = {
     intro:
       'هل لديك سؤال أو ترغب في العمل معًا؟ البريد الإلكتروني هو أفضل وسيلة للتواصل معي، ويمكنك أيضًا العثور عليّ عبر LinkedIn وGitHub.',
     email: 'البريد الإلكتروني',
+    phone: 'الهاتف',
   },
   notFound: {
     title: 'الصفحة غير موجودة',

@@ -28,6 +28,7 @@ export const en = {
         backend: 'Backend',
         security: 'Networking and security',
         support: 'IT support and service',
+        systems: 'Systems',
         tools: 'Data and tools',
       },
     },
@@ -45,6 +46,7 @@ export const en = {
     intro:
       'Have a question or want to work together? Email is the best way to reach me. You can also find me on LinkedIn and GitHub.',
     email: 'Email',
+    phone: 'Phone',
   },
   notFound: {
     title: 'Page not found',

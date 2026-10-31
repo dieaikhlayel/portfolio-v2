@@ -97,6 +97,10 @@ export const PROJECTS: readonly Project[] = [
       ar: 'موقع متعدد الصفحات عن التراث الثقافي الفلسطيني: 14 صفحة وأكثر من 100 صورة، مع نسخة تجريبية مباشرة.',
     },
     tech: ['HTML', 'CSS', 'JavaScript'],
+    note: {
+      en: 'Built on my own, with guidance from my teacher and help from AI coding assistants (ChatGPT and DeepSeek).',
+      ar: 'بُني بجهدي الشخصي، بتوجيه من أستاذي وبمساعدة مساعدي البرمجة بالذكاء الاصطناعي (ChatGPT وDeepSeek).',
+    },
     links: {
       repo: 'https://github.com/dieaikhlayel/Palestinian-Cultural-Heritage',
       live: 'https://dieaikhlayel.github.io/Palestinian-Cultural-Heritage/',

@@ -1,4 +1,4 @@
-export type SkillGroupId = 'frontend' | 'backend' | 'security' | 'support' | 'tools';
+export type SkillGroupId = 'frontend' | 'backend' | 'security' | 'systems' | 'support' | 'tools';
 
 /**
  * One skill. Tool and technology names (Angular, PostgreSQL...) are proper nouns: give only `en`.
@@ -39,21 +39,42 @@ export const SKILL_GROUPS: readonly SkillGroup[] = [
       { en: 'Java' },
       { en: 'Spring Boot' },
       { en: 'Python' },
-      { en: 'FastAPI' },
     ],
   },
   {
     id: 'security',
     items: [
       { en: 'Computer networking', ar: 'شبكات الحاسوب' },
+      { en: 'TCP/IP', ar: 'بروتوكول TCP/IP' },
+      { en: 'LAN and Wi-Fi diagnostics', ar: 'تشخيص شبكات LAN وWi-Fi' },
+      { en: 'Cisco router configuration (CLI)', ar: 'إعداد راوترات Cisco عبر سطر الأوامر' },
       { en: 'Network security', ar: 'أمن الشبكات' },
+      { en: 'Firewall configuration (UFW)', ar: 'إعداد جدار الحماية (UFW)' },
+      { en: 'SSH hardening', ar: 'تأمين SSH' },
+      { en: 'System log analysis', ar: 'تحليل سجلات النظام' },
       { en: 'Cybersecurity fundamentals', ar: 'أساسيات الأمن السيبراني' },
+    ],
+  },
+  {
+    id: 'systems',
+    items: [
+      { en: 'Windows' },
+      { en: 'Linux (Ubuntu)' },
+      { en: 'Windows deployment', ar: 'نشر أنظمة Windows' },
+      { en: 'RAID storage', ar: 'تخزين RAID' },
+      { en: 'VirtualBox' },
     ],
   },
   {
     id: 'support',
     items: [
       { en: 'IT support', ar: 'الدعم التقني' },
+      {
+        en: 'Hardware and software troubleshooting',
+        ar: 'استكشاف أعطال العتاد والبرمجيات وإصلاحها',
+      },
+      { en: 'OS installation', ar: 'تثبيت أنظمة التشغيل' },
+      { en: 'Technical documentation', ar: 'التوثيق التقني' },
       { en: 'Customer service', ar: 'خدمة العملاء' },
     ],
   },

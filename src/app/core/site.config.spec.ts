@@ -1,4 +1,4 @@
-import { SITE_LINKS, displayUrl } from './site.config';
+import { PHONE_DISPLAY, SITE_LINKS, displayUrl } from './site.config';
 
 describe('site config', () => {
   it('shortens addresses for display', () => {
@@ -8,7 +8,11 @@ describe('site config', () => {
     expect(displayUrl('https://github.com/dieaikhlayel')).toBe('github.com/dieaikhlayel');
   });
 
-  it('does not include a phone number', () => {
-    expect(Object.keys(SITE_LINKS)).toEqual(['email', 'linkedin', 'github']);
+  it('lists the public contact details', () => {
+    expect(Object.keys(SITE_LINKS)).toEqual(['email', 'phone', 'linkedin', 'github']);
+  });
+
+  it('shows the phone number in a readable form that matches the dialled number', () => {
+    expect(PHONE_DISPLAY.replaceAll(' ', '')).toBe(SITE_LINKS.phone);
   });
 });

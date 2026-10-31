@@ -23,7 +23,7 @@ export const EDUCATION: readonly AboutEntry[] = [
       ar: 'بكالوريوس في أمن شبكات الحاسوب',
     },
     org: { en: 'Hebron University', ar: 'جامعة الخليل' },
-    period: { en: 'Graduated 2023', ar: 'تخرّج عام 2023' },
+    period: { en: 'Aug 2019 – Jun 2023', ar: 'آب 2019 – حزيران 2023' },
   },
 ];
 
@@ -31,20 +31,20 @@ export const EXPERIENCE: readonly AboutEntry[] = [
   {
     title: { en: 'Frontend Developer', ar: 'مطوّر واجهات أمامية' },
     org: {
-      en: 'Digital journalism heritage preservation project',
-      ar: 'مشروع الحفاظ على التراث الصحفي الرقمي',
+      en: 'Hebron University: “Empowering Journalists to Preserve Palestinian Heritage” project',
+      ar: 'جامعة الخليل: مشروع «تمكين الصحفيين من الحفاظ على التراث الفلسطيني»',
     },
-    period: { en: 'About 5 months', ar: 'حوالي 5 أشهر' },
+    period: { en: 'Jun 2025 – Nov 2025', ar: 'حزيران 2025 – تشرين الثاني 2025' },
   },
   {
-    title: { en: 'IT support intern', ar: 'متدرّب دعم تقني' },
+    title: { en: 'IT Support Intern', ar: 'متدرّب دعم تقني' },
     org: { en: 'Hebron University', ar: 'جامعة الخليل' },
-    period: { en: '2021', ar: '2021' },
+    period: { en: 'May 2021 – Jul 2021', ar: 'أيار 2021 – تموز 2021' },
   },
   {
-    title: { en: 'IT support intern', ar: 'متدرّب دعم تقني' },
-    org: { en: 'Hebron Electric', ar: 'كهرباء الخليل' },
-    period: { en: '2021', ar: '2021' },
+    title: { en: 'IT Infrastructure Intern', ar: 'متدرّب بنية تحتية لتقنية المعلومات' },
+    org: { en: 'Hebron Electric (Hepco)', ar: 'كهرباء الخليل (Hepco)' },
+    period: { en: 'Apr 2021 – May 2021', ar: 'نيسان 2021 – أيار 2021' },
   },
 ];
 

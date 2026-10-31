@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { provideRouter, Router } from '@angular/router';
 import { App } from '../../app';
 import { routes } from '../../app.routes';
-import { SITE_LINKS } from '../../core/site.config';
+import { PHONE_DISPLAY, SITE_LINKS } from '../../core/site.config';
 import { ar } from '../../i18n/translations/ar';
 import { en } from '../../i18n/translations/en';
 
@@ -25,40 +25,41 @@ describe('ContactPage', () => {
     expect(el.querySelector('.contact__intro')?.textContent?.trim()).toBe(en.contact.intro);
   });
 
-  it('has the Arabic heading, intro and email label', async () => {
+  it('has the Arabic heading, intro, email label and phone label', async () => {
     const el = await render('/ar/contact');
     expect(el.querySelector('h1')?.textContent?.trim()).toBe(ar.nav.contact);
     expect(el.querySelector('.contact__intro')?.textContent?.trim()).toBe(ar.contact.intro);
-    expect(el.querySelector('dt')?.textContent?.trim()).toBe(ar.contact.email);
+    const labels = [...el.querySelectorAll('dt')].map((dt) => dt.textContent?.trim());
+    expect(labels.slice(0, 2)).toEqual([ar.contact.email, ar.contact.phone]);
   });
 
-  it('links to email, LinkedIn and GitHub', async () => {
+  it('links to email, phone, LinkedIn and GitHub', async () => {
     const el = await render('/en/contact');
     const hrefs = [...el.querySelectorAll('dd a')].map((a) => a.getAttribute('href'));
-    expect(hrefs).toEqual([`mailto:${SITE_LINKS.email}`, SITE_LINKS.linkedin, SITE_LINKS.github]);
+    expect(hrefs).toEqual([
+      `mailto:${SITE_LINKS.email}`,
+      `tel:${SITE_LINKS.phone}`,
+      SITE_LINKS.linkedin,
+      SITE_LINKS.github,
+    ]);
   });
 
-  it('shows the address as text so it can be read and copied', async () => {
+  it('shows each address as text so it can be read and copied', async () => {
     const el = await render('/en/contact');
     const texts = [...el.querySelectorAll('dd a')].map((a) => a.textContent?.trim());
     expect(texts).toEqual([
       SITE_LINKS.email,
+      PHONE_DISPLAY,
       'linkedin.com/in/diea-ikhlayel',
       'github.com/dieaikhlayel',
     ]);
   });
 
-  it('keeps addresses left-to-right English on the Arabic page', async () => {
+  it('keeps addresses and the phone number left-to-right on the Arabic page', async () => {
     const el = await render('/ar/contact');
     for (const link of el.querySelectorAll('dd a')) {
       expect(link.getAttribute('dir')).toBe('ltr');
       expect(link.getAttribute('lang')).toBe('en');
     }
-  });
-
-  it('does not publish a phone number', async () => {
-    const el = await render('/en/contact');
-    expect(el.innerHTML).not.toContain('tel:');
-    expect(el.textContent).not.toMatch(/\+?\d[\d\s-]{7,}/);
   });
 });
