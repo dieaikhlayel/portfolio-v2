@@ -34,6 +34,10 @@ export const en = {
     },
   },
   about: {
+    photo: {
+      alt: 'AI-generated illustration of Diea Ikhlayel working at a laptop',
+      caption: 'AI-generated image',
+    },
     sections: {
       education: 'Education',
       experience: 'Experience',

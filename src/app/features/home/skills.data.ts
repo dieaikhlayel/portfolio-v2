@@ -49,6 +49,8 @@ export const SKILL_GROUPS: readonly SkillGroup[] = [
       { en: 'LAN and Wi-Fi diagnostics', ar: 'تشخيص شبكات LAN وWi-Fi' },
       { en: 'Cisco router configuration (CLI)', ar: 'إعداد راوترات Cisco عبر سطر الأوامر' },
       { en: 'Network security', ar: 'أمن الشبكات' },
+      { en: 'Risk assessment', ar: 'تقييم المخاطر' },
+      { en: 'Penetration testing (coursework projects)', ar: 'اختبار الاختراق (مشاريع دراسية)' },
       { en: 'Firewall configuration (UFW)', ar: 'إعداد جدار الحماية (UFW)' },
       { en: 'SSH hardening', ar: 'تأمين SSH' },
       { en: 'System log analysis', ar: 'تحليل سجلات النظام' },

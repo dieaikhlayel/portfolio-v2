@@ -35,6 +35,10 @@ export const ar: Translations = {
     },
   },
   about: {
+    photo: {
+      alt: 'رسم مولَّد بالذكاء الاصطناعي لضياء إخليل وهو يعمل على حاسوب محمول',
+      caption: 'صورة مولَّدة بالذكاء الاصطناعي',
+    },
     sections: {
       education: 'التعليم',
       experience: 'الخبرات',

@@ -19,8 +19,8 @@ export interface LanguageSkill {
 export const EDUCATION: readonly AboutEntry[] = [
   {
     title: {
-      en: "Bachelor's degree in Computer Network Security",
-      ar: 'بكالوريوس في أمن شبكات الحاسوب',
+      en: "Bachelor's degree in Network Security",
+      ar: 'بكالوريوس في أمن الشبكات',
     },
     org: { en: 'Hebron University', ar: 'جامعة الخليل' },
     period: { en: 'Aug 2019 – Jun 2023', ar: 'آب 2019 – حزيران 2023' },
@@ -43,7 +43,7 @@ export const EXPERIENCE: readonly AboutEntry[] = [
   },
   {
     title: { en: 'IT Infrastructure Intern', ar: 'متدرّب بنية تحتية لتقنية المعلومات' },
-    org: { en: 'Hebron Electric (Hepco)', ar: 'كهرباء الخليل (Hepco)' },
+    org: { en: 'Hebron Electric (Hepco)', ar: 'Hepco' },
     period: { en: 'Apr 2021 – May 2021', ar: 'نيسان 2021 – أيار 2021' },
   },
 ];
